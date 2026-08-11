@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Online Examination</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f5f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        h1 {
+            text-align: center;
+            color: #1e3a8a;
+        }
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 8px;
+        }
+        .student-details,
+        .question {
+            background: #f8fafc;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #2563eb;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 15px;
+        }.question p {
+            font-weight: bold;
+        }.option {
+            display: block;
+            margin: 10px 0;
+            padding: 8px;
+            font-weight: normal;
+            cursor: pointer;
+        }
+        input[type="radio"] {
+            margin-right: 8px;
+        }.button-group {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }button {
+            width: 50%;
+            padding: 12px;
+            border: 0;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }submit-btn {
+            background: #2563eb;
+        } .submit-btn:hover {
+            background: #1d4ed8;}
+       .reset-btn {
+            background: #dc2626;
+        }
+        .reset-btn:hover {
+            background: #b91c1c;
+        } @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 20px;
+            }
+            .button-group {
+                flex-direction: column;
+            }
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Online Examination System</h1>
+    <p style="text-align:center">
+        <b>Internet Programming (IP)</b>
+    </p>
+    <form action="ExamServlet" method="post">
+        <div class="student-details">
+            <h2>Student Details</h2>
+            <div class="input-group">
+                <label for="name">Name:</label>
+                <input type="text"
+                       name="name"
+                       id="name"
+                       placeholder="Enter your name"
+                       required>
+            </div>
+            <div class="input-group">
+                <label for="rollno">Roll Number:</label>
+                <input type="text"
+                       name="rollno"
+                       id="rollno"
+                       placeholder="Enter your roll number"
+                       required>
+            </div>
+            <div class="input-group">
+                <label for="department">Department:</label>
+                <select name="department" id="department" required>
+                    <option value="">Select Department</option>
+                    <option value="Computer Science">
+                        Computer Science
+                    </option>
+                    <option value="Information Technology">
+                        Information Technology
+                    </option>
+                    <option value="Electronics">
+                        Electronics
+                    </option>
+                    <option value="Electrical">
+                        Electrical
+                    </option>
+                    <option value="Mechanical">
+                        Mechanical
+                    </option>
+                </select>
+            </div>
+        </div>
+        <h2>Internet Programming Questions</h2>
+        <!-- QUESTION 1 -->
+        <div class="question">
+            <p>
+                1. Which HTML element is used to define the largest heading?
+            </p>
+            <label class="option">
+                <input type="radio" name="q1" value="a">
+                A. &lt;head&gt;
+            </label>
+            <label class="option">
+                <input type="radio" name="q1" value="b">
+                B. &lt;h6&gt;
+            </label>
+            <label class="option">
+                <input type="radio" name="q1" value="c">
+                C. &lt;h1&gt;
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q1" value="d">
+                D. &lt;heading&gt;
+            </label>
+        </div>
+        <div class="question">
+            <p>
+                2. Which HTML attribute specifies the destination of a hyperlink?
+            </p>
+            <label class="option">
+                <input type="radio" name="q2" value="a">
+                A. src
+            </label>
+            <label class="option">
+                <input type="radio" name="q2" value="b">
+                B. href
+            </label>
+            <label class="option">
+                <input type="radio" name="q2" value="c">
+                C. link
+            </label>
+            <label class="option">
+                <input type="radio" name="q2" value="d">
+                D. url
+            </label>
+        </div>
+        <div class="question">
+            <p>
+                3. Which CSS property changes the background color?
+            </p>
+            <label class="option">
+                <input type="radio" name="q3" value="a">
+                A. color
+            </label>
+            <label class="option">
+                <input type="radio" name="q3" value="b">
+                B. bgcolor
+            </label>
+            <label class="option">
+                <input type="radio" name="q3" value="c">
+                C. background-color
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q3" value="d">
+                D. background-style
+            </label>
+        </div>
+        <div class="question">
+            <p>
+                4. Which CSS layout system arranges elements in rows and columns?
+            </p>
+            <label class="option">
+                <input type="radio" name="q4" value="a">
+                A. Float
+            </label>
+            <label class="option">
+                <input type="radio" name="q4" value="b">
+                B. Position
+            </label>
+            <label class="option">
+                <input type="radio" name="q4" value="c">
+                C. Grid
+            </label>
+            <label class="option">
+                <input type="radio" name="q4" value="d">
+                D. Inline
+            </label>
+        </div>
+        <div class="question">
+            <p>
+                5. What is the main purpose of the DOM in JavaScript?
+            </p>
+            <label class="option">
+                <input type="radio" name="q5" value="a">
+                A. Store images
+            </label>
+            <label class="option">
+                <input type="radio" name="q5" value="b">
+                B. Represent and manipulate an HTML document
+            </label>
+            <label class="option">
+                <input type="radio" name="q5" value="c">
+                C. Create a database
+            </label>
+            <label class="option">
+                <input type="radio" name="q5" value="d">
+                D. Encrypt web pages
+            </label>
+        </div>
+        <div class="question">
+            <p>
+                6. Which JavaScript method selects an HTML element by its ID?
+            </p>
+            <label class="option">
+                <input type="radio" name="q6" value="a">
+                A. getElementById()
+            </label>
+            <label class="option">
+                <input type="radio" name="q6" value="b">
+                B. getElement()
+            </label>
+            <label class="option">
+                <input type="radio" name="q6" value="c">
+                C. selectById()
+            </label>
+            <label class="option">
+                <input type="radio" name="q6" value="d">
+                D. findElement()
+            </label>
+        </div>
+        <div class="question">
+            <p>
+                7. Which HTTP method is commonly used to send form data?
+            </p>
+            <label class="option">
+                <input type="radio" name="q7" value="a">
+                A. GET
+            </label>
+            <label class="option">
+                <input type="radio" name="q7" value="b">
+                B. POST
+            </label>
+            <label class="option">
+                <input type="radio" name="q7" value="c">
+                C. SEND
+            </label>
+            <label class="option">
+                <input type="radio" name="q7" value="d">
+                D. PUSH
+            </label>
+
+        </div>
+        <div class="question">
+            <p>
+                8. What is the purpose of the alt attribute in an HTML image?
+            </p>
+            <label class="option">
+                <input type="radio" name="q8" value="a">
+                A. Change image color
+            </label>
+            <label class="option">
+                <input type="radio" name="q8" value="b">
+                B. Provide alternative text
+            </label>
+            <label class="option">
+                <input type="radio" name="q8" value="c">
+                C. Specify image size
+            </label>
+            <label class="option">
+                <input type="radio" name="q8" value="d">
+                D. Create an image link
+            </label>
+        </div>
+        <div class="question">
+            <p>
+                9. The JavaScript event used when a user clicks an element is __________.
+            </p>
+            <input type="text"
+                   name="q9"
+                   placeholder="Enter your answer">
+        </div>
+        <div class="question">
+            <p>
+                10. URL stands for __________.
+            </p>
+            <input type="text"
+                   name="q10"
+                   placeholder="Enter your answer">
+        </div>
+        <div class="button-group">
+            <button type="submit" class="submit-btn">
+                Submit Exam
+            </button>
+            <button type="reset" class="reset-btn">
+                Reset Exam
+            </button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
+
